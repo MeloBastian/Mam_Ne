@@ -1,0 +1,6 @@
+# Ignorer tout le contenu des dossiers data
+data/**
+
+# Mais garder les dossiers vides
+!data/.gitkeep
+144to89sp/data/*
