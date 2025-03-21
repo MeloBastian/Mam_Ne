@@ -24,7 +24,7 @@
     - **/mean_med_coveragepergenome.py** (input: {deepthfile_reduced.gzip}; output: {summary_file}, {genome_mask.bed})
    		Compute a mean genome coverage and use it to determine masked windows (step 4).
 
-        - **/write_coding_masked_bed_v2.py** (input: {144_splist}, {exon_position}, {exon_mask}, output {binary_genemask})
+    - **/write_coding_masked_bed_v2.py** (input: {144_splist}, {exon_position}, {exon_mask}, output {binary_genemask})
    		Rewrite the genes in a binary format corresponding to callable or not position (step 6)
 
 - # **/data** 
