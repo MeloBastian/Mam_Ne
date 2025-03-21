@@ -13,7 +13,7 @@
 
    	[3.3] log(pS)~log(pN/pS) graphe with bootstrap bars and n50 coloration
 	
-- ### **/script**
+- ###**/script**
 
 		- **/count_coding_callable_6002gene.py** (input: {species_list}, {list_genepersp}, {gene_list}, {bin_gene_mask}; output: {table_nb_coding_callable})
    		Count the number of coding callable positions (step 1).
@@ -28,6 +28,7 @@
    		 Include the scripts:
 		
 		  	- **subsetwriting_redundant.py**
+
 		  	- **pnps_withmask_fromtable_genexsp.py**
 
 		- **/bootstrap_calcul.py** (input: {subset_polym_info}, {genes_subset}, output: {bootstrap_summary_table})
@@ -36,7 +37,7 @@
 	        - **/bootstrap_view.R** (input: {genomes_summary}, {5%bootstrapquantilesinfo}}
    		plot log(pS) and log(pN/pS) with 5% quantile bootstrap. Color the point in function of the genome coverage and distinguish the 6 species with the suspiciously too light vcf (step 3.3).
 
-- ### **data/**
+- ###**/data**
 
 		- **Enard_pS_masked_GQ150QUAL125_fq02to08_6002genes**: pS and pN/pS per species
 
