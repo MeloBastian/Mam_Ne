@@ -8,12 +8,12 @@ As there is less species, the genes subset for the mapping run can be larger so 
 
 - ### **/data**	
 
-	- */90splist_10ma_*:  89 species list
+	- **/90splist_10ma_**:  89 species list
 	
-	- */1500genes_subset4.conc.treefile_rooted*: rooted treefile from a Iqtree2 run using 1500 genes.
+	- **/1500genes_subset4.conc.treefile_rooted**: rooted treefile from a Iqtree2 run using 1500 genes.
 	
-	- \*/1500genes_subset*.ali\*: 4 multialignement of 1500 genes. 
+	- **/1500genes_subset*.ali**: 4 multialignement of 1500 genes. 
 	
-	- \*/1500genes_subset*.conc\*: 4 concatenation of 1500 genes.
+	- **/1500genes_subset*.conc**: 4 concatenation of 1500 genes.
 		
-	- \*/merge_mam_multigeneglobom.genedsomsuffstat\*: Suffastat from the 4 * 1500 genes mapping, merged in a unique file for fastcoevol.
+	- **/merge_mam_multigeneglobom.genedsomsuffstat**: Suffastat from the 4 * 1500 genes mapping, merged in a unique file for fastcoevol.
