@@ -30,7 +30,7 @@ Different alignment filtering steps:
 
 "X" correspond to the genes id
 
-- # **/script**
+- ### **/script**
 
 	- **/mask.py** (input : {alignment.fna}, {mask_binary.fna}, {non_alignment.fna}, output : {outname})
    	Masking script (step 2). Masking files cames from /Genome_callable_fraction part.
@@ -46,7 +46,7 @@ Different alignment filtering steps:
 	- **/filter_after_phylterandbayescode.py** (input: {bayescode_flaged_sequences}, {phylter_flaged_sequences}, {145_splist}, {gene.fasta}; output: {filtred_gene.fasta})
   	Script to filter out the genes or sequences flaged by Phylter or the Bayescode analysis (step 3.6) 
 
-- # **/data**
+- ### **/data**
 
 	- **/8060_aligned_fasta/X_filtred_ali.fna** : genes after alignement (output of step 1)
 

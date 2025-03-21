@@ -1,4 +1,4 @@
-### **/Mapping** (total size = 2.8G)
+# **/Mapping** (total size = 2.8G)
 
 After all the alignements filtering step, we endup with a set of 6001 genes.
 
@@ -12,7 +12,7 @@ After all the alignements filtering step, we endup with a set of 6001 genes.
 
 "X" refers to the genes subset id
 
-- # */script*
+- ### */script*
  
 There is one script per gene list, they are all similar, only the script for the first list is provided
 
@@ -25,7 +25,7 @@ There is one script per gene list, they are all similar, only the script for the
 	- **/mamreadmultigeneglobom_liste_1.slurm** (input: {out_mapping_name})
    	Treatment of the mappings (step 2).
 
-- # */data*
+- ### */data*
 
 	- **/list6002genes**: final 6001 gene list
 
