@@ -15,14 +15,7 @@ The "*" in the files names indicate the name of the gene or the specie (depend o
 The path in the script correspond to the path used for the analysis. You have te replace them to match with your own directory.
 The input and output information are not always script argument. The directory of these files is often implemented in the scripts. The input and output indication are only there for a better understanding of how the script works.
 
- 
-- /Busco_annotation 10K
-We annotate the genomes using Busco. For computational facilities, we split Busco database (around 9000 genes profiles) in 27 splits and merge the results later.
-	-- /script
-		-- /localbusco.slurm (input: <genome>, <busco_split>; output: <busco_output> ): Run the Busco analysis
-	-? /data
-		-- /Enard_acc_199sp.csv : a table with genome accession number
-		-? Busco raw output (?). Correspond to 197*27 Busco run (=103Go)
+
 
 -- /PostBusco_treatment 3.6G
 (1) The Busco raw output are inputed in a homemade python script to perform filtering, quality check, summarize and agregate the data of interest (the orthologous unicopy complete fasta). It's provide 9211 fasta output.
