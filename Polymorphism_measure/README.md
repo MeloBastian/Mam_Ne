@@ -6,14 +6,14 @@
 
 [3] Study the variability of the pS and pN/pS measure per species by a bootstrap analysis.
 
-   	[3.1] Randomly sampling with repeat 6002 genes in the gene list.
+   	- [3.1] Randomly sampling with repeat 6002 genes in the gene list.
    	Wrote 500 list and compute a pS and pN/pS for each of them.
 
-   	[3.2] Aggregation of the differents subset results and compute pS and pNpS quantiles in a summary table.
+   	- [3.2] Aggregation of the differents subset results and compute pS and pNpS quantiles in a summary table.
 
-   	[3.3] log(pS)~log(pN/pS) graphe with bootstrap bars and n50 coloration
+   	- [3.3] log(pS)~log(pN/pS) graphe with bootstrap bars and n50 coloration
 	
-- ###**/script**
+- ### **/script**
 
 		- **/count_coding_callable_6002gene.py** (input: {species_list}, {list_genepersp}, {gene_list}, {bin_gene_mask}; output: {table_nb_coding_callable})
    		Count the number of coding callable positions (step 1).
@@ -37,7 +37,7 @@
 	        - **/bootstrap_view.R** (input: {genomes_summary}, {5%bootstrapquantilesinfo}}
    		plot log(pS) and log(pN/pS) with 5% quantile bootstrap. Color the point in function of the genome coverage and distinguish the 6 species with the suspiciously too light vcf (step 3.3).
 
-- ###**/data**
+- ### **/data**
 
 		- **Enard_pS_masked_GQ150QUAL125_fq02to08_6002genes**: pS and pN/pS per species
 
