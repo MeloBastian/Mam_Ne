@@ -1,4 +1,4 @@
-### /Mapping (total size = 2.8G)
+### **/Mapping** (total size = 2.8G)
 
 After all the alignements filtering step, we endup with a set of 6001 genes.
 
