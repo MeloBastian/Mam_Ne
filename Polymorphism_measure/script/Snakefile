@@ -1,0 +1,60 @@
+#PathData="/beegfs/data/mbastian/Enard_postbusco"
+PathData="/home/mbastian/data/Enard_postbusco"
+
+#localrules: subset_writing
+
+subset=list(range(500))
+
+rule all:
+    input:
+        expand(PathData+"/bootstrap_ps/6002genes/subset_{subsetnb}_genelist", subsetnb=subset),
+        expand(PathData+"/bootstrap_ps/6002genes/subset_{subsetnb}_pS_6002genes_masked", subsetnb=subset),
+        PathData+"/bootstrap_ps/6002genes/fulltable_pS_6002genes_masked"
+
+
+def subset_expand(wildcards):
+    return expand(PathData+"/bootstrap_ps/6002genes/subset_{subsetnb}", subsetnb=wildcards.subset)
+
+rule subset_writing:
+    input:
+        genelist=PathData+"/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/list6002genes",
+    output:
+        subset=PathData+"/bootstrap_ps/6002genes/subset_{subsetnb}_genelist"
+    shell:
+        """
+        python3 subsetwriting_redundant.py {input.genelist} {output.subset} 
+        """
+
+rule pS_estimation_subset: #have to replace genelist, give access to genexsp lenmasked, access to filtred genes fasta
+    input:
+        subset=PathData+"/bootstrap_ps/6002genes/subset_{subsetnb}_genelist",
+        splist=PathData+"/1genus_144splist_E",
+        lengthtable= PathData+"/coding_callable/withgeneinfo/table_spxgenecallablelength_6002genes_fq02to08_masked", #those table are from table_gene_length_nonalign_aftermasking.py
+        Stable=PathData+"/bootstrap_ps/6002genes/table_genexsp_Scount_6002genes_fq02to08_masked",
+        NStable= PathData+"/bootstrap_ps/6002genes/table_genexsp_NScount_6002genes_fq02to08_masked"
+
+    output:
+        pstable=PathData+"/bootstrap_ps/6002genes/subset_{subsetnb}_pS_6002genes_masked"
+    shell:
+        """
+        python3 pnps_withmask_fromtable_genexsp.py {input.subset} {output.pstable} {input.lengthtable} {input.Stable} {input.NStable}
+        """
+
+
+rule pS_estimation_full:
+    input:
+        genelist=PathData+"/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/list6002genes",
+        lengthtable= PathData+"/coding_callable/withgeneinfo/table_spxgenecallablelength_6002genes_fq02to08_masked", #those table are from table_gene_length_nonalign_beforephylter.py
+        Stable=PathData+"/bootstrap_ps/6002genes/table_genexsp_Scount_6002genes_fq02to08_masked",
+        NStable= PathData+"/bootstrap_ps/6002genes/table_genexsp_NScount_6002genes_fq02to08_masked"
+    output:
+        pstable=PathData+"/bootstrap_ps/6002genes/fulltable_pS_6002genes_masked"
+    shell:
+        """
+        python3 pnps_withmask_fromtable_genexsp.py {input.genelist} {output.pstable} {input.lengthtable} {input.Stable} {input.NStable}
+        """
+
+#rule summary_pS: --> by hand with script bootstrap_calcul.py
+    #return a list of pS by sp, mean, med, stats
+    #have to also run ps estimation on full dataset
+    #compute a bootstrap score, how ?
