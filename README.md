@@ -24,6 +24,8 @@ The <input> and <output> information are not always arguments of the script. The
 
 The pipeline and the logic for using scripts and data are summarised in Figure X.  The colour yellow represents the data (entirely yellow) and script (circled in yellow) that are transmitted. The grey boxes represent the intermediate data.
 We have opted not to transmit data that is simple and/or relatively inexpensive to regenerate. All the study scripts are transmitted. If nothing is provided to pass from one file to another, this means that the processing was done by hand, without scripting, in a few simple lines of code.
-The coloured backgrounds identify the 8 main stages of the process and refer to the stages presented in the various folders in the directory.
+The coloured backgrounds identify the 8 main stages of the process and refer to the stages presented in the various folders in the directory (except for /144to89sp and /Correlation_analysis).
+
+(pipeline from Enard to coevol(1).png)
 
 
