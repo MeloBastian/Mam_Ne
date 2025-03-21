@@ -16,7 +16,7 @@
 
 "X" refers to the gene id
 
--# **/script**
+- # **/script**
 
 	- **/reducing_coverage_V2.py** (input: {deepthfile.gzip}, output: {deepthfile_reduced.gzip})
    		Bam reduction script (step 3).
@@ -27,7 +27,7 @@
         - **/write_coding_masked_bed_v2.py** (input: {144_splist}, {exon_position}, {exon_mask}, output {binary_genemask})
    		Rewrite the genes in a binary format corresponding to callable or not position (step 6)
 
--# **/data** 
+- # **/data** 
 
 	- **/depth_files_1.tar.gz** and **/depth_files_2.tar.gz*: Raw genome coverage files (output of step 2).
 
