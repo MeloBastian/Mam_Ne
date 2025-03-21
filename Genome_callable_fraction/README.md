@@ -21,7 +21,7 @@
 	- **/reducing_coverage_V2.py** (input: {deepthfile.gzip}, output: {deepthfile_reduced.gzip})
    		Bam reduction script (step 3).
 
-        - **/mean_med_coveragepergenome.py** (input: {deepthfile_reduced.gzip}; output: {summary_file}, {genome_mask.bed})
+    - **/mean_med_coveragepergenome.py** (input: {deepthfile_reduced.gzip}; output: {summary_file}, {genome_mask.bed})
    		Compute a mean genome coverage and use it to determine masked windows (step 4).
 
         - **/write_coding_masked_bed_v2.py** (input: {144_splist}, {exon_position}, {exon_mask}, output {binary_genemask})
