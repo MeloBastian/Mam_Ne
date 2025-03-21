@@ -1,4 +1,4 @@
-# **/Correlation_analysis* (total size = 65K)
+# **/Correlation_analysis** (total size = 65K)
 
 [1] Compute dS and dN/dS per branch and leaf for the 89 and 144 species tree. Use the bayescode/get_empirical_branchdnds tools.
 
@@ -15,21 +15,21 @@
 
 	- **/pgls.r** (input: {traits_dsomenriched_table}, {tree})
 
-		This script is not automatized. Manual work is needed to choose the 2 traits to correlate and reporting the correlation coefficient and posterior probability.
-		The most important lines are : 
+   	This script is not automatized. Manual work is needed to choose the 2 traits to correlate and reporting the correlation coefficient and posterior probability.
+   	The most important lines are : 
 
-		  	- library("caper")
-			- library(nlme)
-		  	- IC= comparative.data(phylo, thv, sp, na.omit = F , vcv=TRUE )
-		  	- modelIC=crunch(log(trait1)~log(trait2), data=IC)
-                  	- summary(modelIC)
+		- library("caper")
+		- library(nlme)
+		- IC= comparative.data(phylo, thv, sp, na.omit = F , vcv=TRUE )
+		- modelIC=crunch(log(trait1)~log(trait2), data=IC)
+		- summary(modelIC)
 
 	- **/ggcorrplot_changed.R**
 
-                This script is not automatized.
-                2 type of matrix are reported : M for the correlation coefficient and PP for the statistical support (posterior probability or p-value).
-                4 version of these matrix are available, corresponding to the 8 studies (2 by matrix).
-                The ggcorrplot function have to be manually modified to accomodate if you analyse a fastcoevol or a pgls analysis (have to modify the sig.level)
+   	This script is not automatized.
+   	2 type of matrix are reported : M for the correlation coefficient and PP for the statistical support (posterior probability or p-value).
+   	4 version of these matrix are available, corresponding to the 8 studies (2 by matrix).
+   	The ggcorrplot function have to be manually modified to accomodate if you analyse a fastcoevol or a pgls analysis (have to modify the sig.level)
 
 - ### **/data**
 
