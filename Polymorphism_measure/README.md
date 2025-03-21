@@ -6,12 +6,12 @@
 
 [3] Study the variability of the pS and pN/pS measure per species by a bootstrap analysis.
 
-   - [3.1] Randomly sampling with repeat 6002 genes in the gene list.
+   	[3.1] Randomly sampling with repeat 6002 genes in the gene list.
    	Wrote 500 list and compute a pS and pN/pS for each of them.
 
-   - [3.2] Aggregation of the differents subset results and compute pS and pNpS quantiles in a summary table.
+   	[3.2] Aggregation of the differents subset results and compute pS and pNpS quantiles in a summary table.
 
-   - [3.3] log(pS)~log(pN/pS) graphe with bootstrap bars and n50 coloration
+   	[3.3] log(pS)~log(pN/pS) graphe with bootstrap bars and n50 coloration
 
 
 	
