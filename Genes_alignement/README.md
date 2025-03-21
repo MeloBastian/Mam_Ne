@@ -26,7 +26,7 @@ Different alignment filtering steps:
                 -  The mapping is an input for the tools genebranchdnds (-d {mappingsuffstats}, -t {tree})  which provide a dn/ds measure for each branch and gene in a tab.
                 -  This table is analysed to detect outliers branch dn/ds in each genes.
 
-   	[3.6] Filtering every sequences or genes flagued by Phylter or Bayescode.
+   	[3.6] Filtering every sequences or genes flaged by Phylter or Bayescode.
 
 "X" correspond to the genes id
 
