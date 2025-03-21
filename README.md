@@ -26,6 +26,6 @@ The pipeline and the logic for using scripts and data are summarised in Figure X
 We have opted not to transmit data that is simple and/or relatively inexpensive to regenerate. All the study scripts are transmitted. If nothing is provided to pass from one file to another, this means that the processing was done by hand, without scripting, in a few simple lines of code.
 The coloured backgrounds identify the 8 main stages of the process and refer to the stages presented in the various folders in the directory (except for /144to89sp and /Correlation_analysis).
 
-(pipeline from Enard to coevol(1).png)
+![](pipeline_scheme.png)
 
 
