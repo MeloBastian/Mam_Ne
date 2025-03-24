@@ -17,15 +17,15 @@ The correlations are aggregated for graphical representation, with a view to pub
 **Notes for the users**
 
 The different directories corresponds to the differents steps of the analysis. Their is a readme with more detailed informations in each of them.\
-In this git repository, only the scripts are provided. The data mentionned in the different readme will be available soon.
+In this git repository, only the scripts are provided (and some light data files). The data mentionned in the different readme will be available soon.
 
 The path in the scripts correspond to the path used localy for the analysis. You have te replace them to match with your own directory.
 The <input> and <output> information are not always arguments of the script. They are juste indications to the users for a better understanding of how the scripts works.
 
-The pipeline and the logic for using scripts and data are summarised in Figure X.  The colour yellow represents the data (entirely yellow) and script (circled in yellow) that are transmitted. The grey boxes represent the intermediate data.
-We have opted not to transmit data that is simple and/or relatively inexpensive to regenerate. All the study scripts are transmitted. If nothing is provided to pass from one file to another, this means that the processing was done by hand, without scripting, in a few simple lines of code.
+The pipeline and the logic for using scripts and data are summarised in the figure bellow. The colour yellow represents the data (entirely yellow) and script (circled in yellow) that are transmitted. The grey boxes represent the intermediate data.
+We have opted not to transmit data that is simple and/or relatively inexpensive to regenerate. All the study scripts are transmitted. If nothing is provided to pass from one file to another, this means that the processing was done by hand, without scripting, in a few lines of code.
 The coloured backgrounds identify the 8 main stages of the process and refer to the stages presented in the various folders in the directory (except for /144to89sp and /Correlation_analysis).
 
-![](pipeline_scheme.png)
+![Summary flow chart of the data analysis (maj 21/03/25)](pipeline_scheme.png)
 
 
