@@ -18,7 +18,7 @@ cwd=${PWD}
 metaeuk="${outdir}/run_mammalia${2}_odb10/metaeuk_output"
 
 cleanup() { 
- # if [ ! -f "${outdir}/DONE.flag" ]; then #condition toujours verifiee...
+ # if [ ! -f "${outdir}/DONE.flag" ]; then #always verified
     rm -rf "${metaeuk}/tmp" 
     rm -rf "${metaeuk}/refseq_db_rerun.faa"
     echo "metaeuk temp file removed"
