@@ -5,7 +5,8 @@ For computational facilities, we split the BUSCO database (around 9200 genes pro
       
 - ### **/script**
 
-  - **/localbusco.slurm** (input: <genome>, <busco_split>; output: <busco_output> ): Run the Busco analysis
+  - **/localbusco.slurm** (input: <genome>, <busco_split>; output: <busco_output> ): Run the Busco analysis.\
+    Busco create a lot of temporary files that you have to delete to preserve your computer memory when you parallelise the analysis (cleanup function in the script)
        
 - ### **/data** (_should we provide the busco output ? very long to run but also very heavy to storage_)
   
