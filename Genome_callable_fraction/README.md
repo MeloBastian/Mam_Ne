@@ -29,6 +29,4 @@
 
 - ### **/data** 
 
-	- **/depth_files_1.tar.gz** and **/depth_files_2.tar.gz*: Raw genome coverage files (output of step 2).
-
-	- **/binary_genes_masking/Xbinmask.fasta** : binary file (output of step 6).
+	- **binary_genes_masking.tar.gz/binary_genes_masking/Xbinmask.fasta** : binary file (output of step 6).
