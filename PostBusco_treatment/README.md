@@ -23,9 +23,9 @@ Script to identify genes and species to filter out and list are provided.
 
 - ### **/data**
 	
-	- **/9211_no_filter_genes/X.fasta** : 9211 genes fasta files, output of the step 1.
+	- **/9211_no_filter_genes.tar.gz/9211_no_filter_genes/X.fasta** : 9211 genes fasta files, output of the step 1.
 
-	- **/exons_position/Xphase1.gff_sorted** : exon position for the 9211 genes, output of the step 1.
+	- **/exons_position/exons_position/Xphase1.gff_sorted** : exon position for the 9211 genes, output of the step 1.
 
 	- **/gene2sp_summary** : genexsp presence/absence table for the step 2. Obtained from the merge of the per split gene_list and busco_summary. 
 
