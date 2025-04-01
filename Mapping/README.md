@@ -29,9 +29,7 @@ There is one script per gene list, they are all similar, only the script for the
 
 	- **/list6002genes**: final 6001 gene list
 
-	- **/mam_subset_X_1000genes.ali**: 6 multialignement of 1000 genes (output of step 1)
-
-	- **/mam_subset_X_1000genes.conc**: 6 concatenation of 1000 genes (output of step 1)
+	- **6001genes.tar.gz**: the 6001 genes alignements
 
 	- **1007forphylo.conc.treefile_rooted**: Phylogeny (output of step 2)
 
