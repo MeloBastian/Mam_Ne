@@ -49,13 +49,11 @@
 		
 - ### **/data**
 
-  - **/vcf_files_lbbe.tar.bz2**: Raw vcf files in format VCFv4.2 (output of step 0)
-
-  - **/vcfannoted/X.vcf**: vcf annoted, output of the annotate.bash script (output of step 4) 
+  - **/vcfannoted.tar.gz/vcfannoted/X.vcf**: vcf annoted, output of the annotate.bash script (output of step 4) 
 
   - **/table_idgenebysp**: list of gene per species for the 6002 gene list (output of step 5)
 
-  - **/finalvcf/Enard_mam_X_coding_homofiltred_GQ150QUAL125_fq02to08_6002genes.vcf** : final vcf (output of step 7)
+  - **finalvcf.tar.gz/finalvcf/Enard_mam_X_coding_homofiltred_GQ150QUAL125_fq02to08_6002genes.vcf** : final vcf (output of step 7)
 
   - **/table_sp2lencallcoding_6002genes** : summary of the number of coding callable position per species (output of step 7)
 		
