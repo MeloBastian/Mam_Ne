@@ -48,6 +48,6 @@ Different alignment filtering steps:
 
 - ### **/data**
 
-	- **/8060_aligned_fasta/X_filtred_ali.fna** : genes after alignement (output of step 1)
+	- **/8060_aligned_fasta.tar.gz/8060_aligned_fasta/X_filtred_ali.fna** : genes after alignement (output of step 1)
 
 	- **/phylter_output** : Output of the PhylteR analysis with parameters and flaged sequences.
