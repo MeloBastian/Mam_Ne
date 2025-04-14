@@ -1,8 +1,4 @@
 library(ggplot2)
-#data(mtcars)
-#corr <- M
-#p.mat = PP
-#head(corr[, 1:6])
 library(ggcorrplot)
 
 ###data
@@ -44,7 +40,7 @@ colnames(M)=c("dS", "dN/dS", "mass", "maturity","longevity", "pS", "pN/pS")
 rownames(PP)=c("dS", "dN/dS", "mass", "maturity","longevity", "pS", "pN/pS")
 colnames(PP)=c("dS", "dN/dS", "mass", "maturity","longevity", "pS", "pN/pS")
 
-#diagsup 89 sp low ps, 6 sp filtred, diaginf 144 sp 6 sp filtred !pgls!, pas de dS
+#diagsup 89 sp low ps, 6 sp filtred, diaginf 144 sp 6 sp filtred !pgls!, no dS available
 M<-matrix(nrow=6, ncol=6, data=c(1,0.41,0.44,0.33,-0.36,0.51,
                                  0.16,1,0.58,0.71,-0.25,0.41,
                                  0.22,0.57,1,0.7,-0.31,0.46,
@@ -52,11 +48,11 @@ M<-matrix(nrow=6, ncol=6, data=c(1,0.41,0.44,0.33,-0.36,0.51,
                                  -0.37,-0.14,-0.19,-0.21,1,-0.72,
                                  0.41,0.27,0.31,0.21,-0.62,1), byrow=T)
 
-matrice <- M #matrice à l'envers...
+matrice <- M #upside down matrix...
 n <- nrow(matrice)
 for (i in 1:(n - 1)) {
   for (j in (i + 1):n) {
-    # Échanger les éléments
+    # Exchanging elements
     temp <- matrice[i, j]
     matrice[i, j] <- matrice[j, i]
     matrice[j, i] <- temp
@@ -72,11 +68,11 @@ PP<-matrix(nrow = 6, ncol=6, data=c(1,0.0003,0.0002,0.007,0.001,2.1e-06,
                                     6.8e-06,0.116,0.039,0.023,1,1.7e-13,
                                     6.6e-07,0.0028,0.00091,0.0242,8.5e-16,1),byrow=T)
 
-matrice <- PP #matrice à l'envers...
+matrice <- PP #upside down matrix...
 n <- nrow(matrice)
 for (i in 1:(n - 1)) {
   for (j in (i + 1):n) {
-    # Échanger les éléments
+    # Exchanging elements
     temp <- matrice[i, j]
     matrice[i, j] <- matrice[j, i]
     matrice[j, i] <- temp
@@ -108,7 +104,7 @@ rownames(PP)=c("dN/dS", "mass", "maturity","longevity", "pS", "pN/pS")
 colnames(PP)=c("dN/dS", "mass", "maturity","longevity", "pS", "pN/pS")
 
 
-### La ici la longue fonction qu'on peut bidouiller  et tout en bas un exemple avec le tableau corr et les p_value dans p.mat (la c'est les memes)
+### Here is the long ggcorplot function that we can adapt for the analysis (ex : modification of sig.level) and the plot design
 
 ggcorrplot <- function(corr,
                        method = c("square", "circle"),
@@ -315,12 +311,6 @@ ggcorrplot <- function(corr,
 
 
 
-#' Compute the matrix of correlation p-values
-#'
-#' @param x numeric matrix or data frame
-#' @param ... other arguments to be passed to the function cor.test.
-#' @rdname ggcorrplot
-#' @export
 
 cor_pmat <- function(x, ...) {
   
@@ -404,6 +394,8 @@ cor_pmat <- function(x, ...) {
   x <- x[, -1]
   as.matrix(x)
 }
+
+# run the function:
 
 ggcorrplot(M,p.mat = PP,digits=2,lab_size=5,ggtheme = ggplot2::theme_gray,
            colors = c("#6D9EC1", "white", "#E46726"),outline.size=.5,
