@@ -7,9 +7,8 @@ phyl=open("/home/mbastian/data/Enard_postbusco/phylter_vs_bayescode/fulldataset/
 
 b=bayes.readlines()
 p=phyl.readlines()
-#p=p[4:]
 
-gene2sp=dict() #for each gene, contain the sp to remove
+gene2sp=dict() #for each gene (b or p), contain the sp (e) to remove from the ali
 for e in p:
     e=e[:-1]
     data=e.split()
@@ -49,11 +48,11 @@ countremove=0
 while gene !="":
     if os.path.exists("/home/mbastian/data/Enard_postbusco/Genes_to_analyse/Genes_filtred/145spgenes_masked/"+gene):
         geneshort=gene.split("_masked_length")[0]
-        if geneshort in gene2sp.keys(): #si il y a des seq à enelver, peut inclure les genes entierement suprimmés par phylter (toutes les seq du genes sont à filtrer) --> donc creer genes vides ?
-            new_gene=[] #futur gene
+        if geneshort in gene2sp.keys(): 
+            new_gene=[] 
             with open("/home/mbastian/data/Enard_postbusco/Genes_to_analyse/Genes_filtred/145spgenes_masked/"+gene) as handle:
                 for record in SeqIO.parse(handle, "fasta"):
-                    if record.id not in gene2sp[geneshort] and record.id in splist: #si la sequence n'est pas à enlever & dans la liste d'especes
+                    if record.id not in gene2sp[geneshort] and record.id in splist: 
                         new_gene.append(record)
             new_alignment = MultipleSeqAlignment(new_gene)
             if len(new_alignment)>116: # 80% of 145
@@ -66,26 +65,11 @@ while gene !="":
                     if record.id in splist:  # si la sequence est dans la liste d'especes
                         new_gene.append(record)
             new_alignment = MultipleSeqAlignment(new_gene)
-            if len(new_alignment) > 116:  # 80% of 145
+            if len(new_alignment) > 116:  # 80% of 145 sp
                 SeqIO.write(new_alignment,"/home/mbastian/data/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/" + geneshort + "_phylterandbayescode_filtred_145sp.fasta","fasta")
-
-            #chemin_source = "/home/mbastian/data/Enard_postbusco/Genes_to_analyse/Genes_filtred/"+gene
-            #chemin_destination = "/home/mbastian/data/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/"+geneshort+"_phylterandbayescode_filtred_145sp.fasta"
-
-            # Copier le fichier source vers le fichier destination en le renommant
-            #shutil.copy(chemin_source, chemin_destination)
+                
             countunchanges+=1
     else:
         print("doesnt exist")
 
     gene = genefile.readline()[:-1]
-
-# count=0
-# for v in gene2sp.values():
-#     if len(v)>16:
-#         count+=1
-
-# tableout=open("/home/mbastian/data/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/sp2gene_filter", "w")
-# for key, value in gene2sp.items():
-#     for sp in value:
-#         tableout.write(str(sp[:-2])+"\t"+str(key)+"\n") #remove "_E"
