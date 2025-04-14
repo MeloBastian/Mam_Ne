@@ -1,13 +1,11 @@
 # /PostBusco_treatment (total size = 3.6G)
 
-[1] The Busco raw output are inputed in a homemade python script to perform filtering, quality check, summarize and agregate the data of interest (the orthologous unicopy complete fasta). It's provide 9211 fasta output.
-This step also provide the position of each exons in each anotated genes in a metaeuk format. The metaeuk format is converted in gff format using the metaeuktogff.py script and manually sorted by genome position. 
-Script exons position in gff format and fasta files are provided.
+[1] The Busco raw output are inputed in a homemade python script (Postraitement_busco_V4.py) to perform, quality control, summarize and agregate the data of interest (the orthologous unicopy complete fasta). It's provide 9211 fasta output.
+This step also provide the position of each exons in each anotated genes in a metaeuk format. The metaeuk format is then converted in a gff format using the metaeuktogff.py script and manually sorted by genome position. 
 
-[2] We reduce the genes dataset to remove genes not present in majority of species and species with a too low Busco score. Leads to a list of 8060 genes and 183 species.
-Script to identify genes and species to filter out and list are provided.
+[2] We manually reduce the genes dataset to remove genes not present in majority of species and species with a too low Busco score (identified by the gene2sp_filtering.R script). Leads to a list of 8060 genes and 183 species.
 
-[3] We Reduce the 183 species list to keep only one specie per genus (use coverage and availability of their life history traits as a criterion). End up with a list of 144 species (provided). We filter the genes to keep only the sequences from those species.
+[3] We Reduce the 183 species list to keep only one specie per genus (use coverage and availability of their life history traits as a criterion). End up with a list of 144 species. We filter the genes to keep only the sequences from those species.
 
 "X" refers to the gene id
 
@@ -19,7 +17,7 @@ Script to identify genes and species to filter out and list are provided.
         - **/gene2sp_filtering.R** (input: <gene2sp_summary>; output: <genelist_filtred_8060genes>, <splist_filtred_183sp>) 
    	R script to identify the genes present in at least 70% of the species and the species containing at least 80% of the remaining genes (step 2).
 
-	- **/metaeuktogff.py** (input: <exon_position>; output: <exon_position.gff>): converte the exons positions in metaeuk format to gff format.
+	- **/metaeuktogff.py** (input: <exon_position>; output: <exon_position.gff>): converte the exons positions from a metaeuk format to a gff format.
 
 - ### **/data**
 	
