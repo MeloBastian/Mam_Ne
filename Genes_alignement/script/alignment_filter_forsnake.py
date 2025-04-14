@@ -3,8 +3,6 @@ import sys
 import statistics
 import os
 import ali
-#pathdata="/home/mbastian/data"
-#pathdata="/beegfs/data/mbastian"
 
 noninformative_characters = "?X-*"
 gene=sys.argv[2]
