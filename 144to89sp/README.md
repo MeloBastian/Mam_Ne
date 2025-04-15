@@ -1,9 +1,10 @@
 # **/144to89species** (total size = 1.7G)
 
-In an experiment, the 144 species tree was reduced to remove close species using the bayescode cuttree program : /bayescode/data/cuttree <chronogram> <cutoff> <out>.
-We choose 0.1 as a cutoff.
+In a part of the analyse, the 144 species tree was reduced to remove close species using the bayescode cuttree program : /bayescode/data/cuttree <chronogram> <cutoff> <out>.
+We use 0.1 as a cutoff.
 When 2 or more species are flagged as too close, one of them is choosen based on its coverage and life history traits availability.
-The mapping in then realised as for the 144 species set (see /Mapping).
+This new specie subset countain 89 species.
+The mapping is then realised as for the 144 species set (see /Mapping).
 As there is less species, the genes subset for the mapping run can be larger so the genes are regrouped in 4 * 1500 genes listes rather than 6 * 1000 genes.
 
 "X" correspond to the subset id
