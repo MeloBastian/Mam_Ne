@@ -1,17 +1,17 @@
 # Polymorphism_measure (total size = 7.4M)
 
-[1] We estimate the number of callable coding sites in the 6002 genes. The input of the script cames from different other part of the project.
+[1] We estimate the number of callable coding sites in the 6002 genes. The inputs of the script cames from different other part of the project.
 
 [2] Compute pS and pN/pS
 
 [3] Study the variability of the pS and pN/pS measure per species by a bootstrap analysis.
 
-   	[3.1] Randomly sampling with repeat 6002 genes in the gene list.
+- [3.1] Randomly sampling with repeat 6002 genes in the gene list.
    	Wrote 500 list and compute a pS and pN/pS for each of them.
 
-   	[3.2] Aggregation of the differents subset results and compute pS and pNpS quantiles in a summary table.
+- [3.2] Aggregation of the differents subset results and compute pS and pNpS quantiles in a summary table.
 
-   	[3.3] log(pS)~log(pN/pS) graphe with bootstrap bars and n50 coloration
+- [3.3] log(pS)~log(pN/pS) graphe with bootstrap bars and n50 coloration
 
 
 	
@@ -24,17 +24,19 @@
    	pS and pN/pS computation script (step 2).
 
 	- **/table_gene_length_nonalign_aftermasking.py** (input: {genelist}, {splist}, {binarymask_pergene}, {vcf}; output: {table_nbcallpospergene}, {table_nbSpospergene}; {table_nbNSpospergene})
-   	Prepare the data for the bootstrap analysis. give the number of synonymous and non-synonymous sites per genes and the callable size (step 3.1)
+   	Set up the data for the bootstrap analysis. Gives the number of synonymous and non-synonymous sites per genes and the callable size (step 3.1).
 
 	- **/snakefile** for the step 3.1 (input: {genelist}, {specieslist}, {table_nbcallpospergene}, {table_nbSpospergene}; {table_nbNSpospergene}; output: {subset_polym_info} )
    	 Include the scripts:
 		
 	  - **subsetwriting_redundant.py**
+         Write a subset of the gene list by randomly sampling with repeat in the gene list.
 
 	  - **pnps_withmask_fromtable_genexsp.py**
+          Adapted script to compute pS and pN/pS only for the genes in the subset.
 
 	- **/bootstrap_calcul.py** (input: {subset_polym_info}, {genes_subset}, output: {bootstrap_summary_table})
-   	Merge the subset results and compute summary statistics as the pS and pNpS quantiles (step 3.2)
+   	Merge the 500 subset results and compute summary statistics (pS and pN/pS quantiles) (step 3.2).
 
 	- **/bootstrap_view.R** (input: {genomes_summary}, {5%bootstrapquantilesinfo}}
    		plot log(pS) and log(pN/pS) with 5% quantile bootstrap. Color the point in function of the genome coverage and distinguish the 6 species with the suspiciously too light vcf (step 3.3).
@@ -56,5 +58,5 @@
    	bootstrap summary informations (out of step 3.2)
 
 	- **144spsummary_genomique_withn50**
-   	A table with informations like the genome coerage, n50, number of genes etc (usefull for step 3.3)
+   	A table with informations like the genome coverage (usefull for step 3.3), n50, number of genes etc 
 		
