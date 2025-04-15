@@ -20,9 +20,6 @@ Efastalist=Efastalist.readlines()
 sortie_full=open(out_table_path_full,"w")
 sortie_full.write("specie\tpS\tpN\tpN/pS\tNSobs\tSobs\tlencallablepos_codon\tnbgenewithSNP\tnbgenetot\n")
 
-
-
-
 lencoding_file=open(path_data+"/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/table_sp2lencallcoding_6002genes","r")
 lencoding=lencoding_file.readlines()
 sp2lencallable=dict()
@@ -33,7 +30,7 @@ for a in lencoding:
     sp2lencallable[sp]=call
 
 
-for elmt in Efastalist:
+for elmt in Efastalist: #for each sp
     geneprstinlist=0
     genefileexist=0
     seqnotfound = 0
@@ -77,7 +74,7 @@ for elmt in Efastalist:
             line = vcffile.readline()
         nbgene=len(gene2length)
         #print("nb snp in vcf file corresponding to busco genes: ", geneprstinlist, "\nnb busco genes in vcf file:  ",  nbgene)
-        if geneprstinlist != 0: #si on trouve au moins un gene
+        if geneprstinlist != 0: #if their is at least one gene with at least one snp
             for gene in genelist:
                 if gene not in genewithsnp: #genes from busco without snp in the vcf
                     #if gene not in sp2genefiltred[name]:
