@@ -2,7 +2,7 @@
 
 [0] Raw vcf files are generated using bcftools (see /Genome_callable_fraction)
 
-[1] The VCFv4.2 format is not compatible with vcftools (some quality score are in a format not readable for vcftools).
+[1] The VCFv4.2 format of the vcf is not compatible with vcftools (some quality score are in a format not readable for vcftools).
    We reformate the vcf with a homemade script.
 
 [2] We use vcftools to keep only the biallelic SNP : 
@@ -13,7 +13,7 @@
 
 [4] We annotate the vcf to characterize each snp as synonymous, non-synonymous or non-coding and filtered out the non-coding positions.
 
-[5] A gene list per species is generated which is needed for next scripts. (provided in /data)
+[5] A gene list per species is generated which is needed for next scripts. 
 
 [6] We keep only the snp which belong to the 6002 studied genes and with good quality score.
 
