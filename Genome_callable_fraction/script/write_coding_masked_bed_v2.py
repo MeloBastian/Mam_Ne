@@ -102,6 +102,7 @@ for s in splist:
             i+=1
 
     #ecrire une sequence de la taille du CDS, si position pas dans masque, ecrire 1, sinon ecrire 0
+    #write a sequence with len equal to the CDS len, if the position is not in the mask, write a 1, else write a 0 --> allow later to sum the "1" and obtain the callable fraction of each CDS
     gene2len=dict()
     for gene in gene2exon_genecoord:
         totlen=0
@@ -121,7 +122,7 @@ for s in splist:
             done = False
             if gene in gene2mask_genecoord:
                 for elmt in gene2mask_genecoord[gene]:
-                    if a >= elmt[0]-1 and a <=elmt[1]-1 and done == False: #position dans un mask (done = pas besoin chercher ds autres masque si en a trouvé un)
+                    if a >= elmt[0]-1 and a <=elmt[1]-1 and done == False: 
                         seq.append("0")
                         done=True
             if done ==False:
@@ -132,22 +133,7 @@ for s in splist:
          else:
              seq="".join(seq)
 
-        #mask all codon if a base is masked
-        # b = list(seq)
-        # e = [b[i:i + 3] for i in range(0, len(b), 3)]
-        # seq = []
-        # for elmt in e:
-        #     if "0" in elmt:
-        #         codon = ['0', '0', '0']
-        #     else:
-        #         codon = elmt
-        #     seq.append(codon)
-        # seq2 = [element for sous_liste in seq for element in sous_liste]
-        # c2 = [str(element) for element in seq2]
-        # i = "".join(c2)
-        #
-        #
-        # gene2seqbin[gene]=i
+
         gene2seqbin[gene]=seq
     sp2gene2seq[sp]=gene2seqbin
     #print(seq)
@@ -160,61 +146,3 @@ for gene in genelist:
         if gene in sp2gene2seq[sp]:
             out.write(">"+sp+"\n"+sp2gene2seq[sp][gene]+"\n")
             #sp2seq[sp]=sp2gene2seq[sp][gene]
-
-            #just to count the nb of elmt in each object ( to be equal)
-    #         a = gene2exons_scafcoord[gene]
-    # countleninscaf = 0
-    # for elmt in a:
-    #     b = elmt[-1] - elmt[0] +1
-    #     countleninscaf += b
-    #
-    # a = gene2exon_genecoord[gene]
-    # countleningene = 0
-    # for elmt in a:
-    #     b = elmt[-1] - elmt[0]+1
-    #     countleningene += b
-    #
-    # print(gene2brin[gene])
-    # leningene = gene2exon_genecoord[gene][-1][-1]
-
-
-    #print(str(countleninscaf), str(countleningene), str(leningene))
-
-
-#ecrire seq 0/1 de masquage par gene.  ali.py prendra aliprank, mask 0/1 et gene non ali
-#refaire tourner hmmcleaner et bmge apres le masquage de l'ali. --> nouvelle rull snake
-
-# #gene+ --> work
-# gene="25020at40674"
-# scaf="NW_020834726.1"
-#
-# #gene- --> didn't work
-# gene="45497at40674" #gene -
-# scaf='NW_020834726.1'
-#
-# start=gene2mask_scafcoord[gene][0][0]# phase 1
-# end=gene2mask_scafcoord[gene][0][1]
-# sp="Acinonyx_jubatus"
-#
-# from Bio import SeqIO
-# from Bio.Seq import Seq
-# record_dict = SeqIO.to_dict(SeqIO.parse("/home/mbastian/data/Enard_postbusco/test/exon_work/mam_Acinonyx_jubatus_E.fna", "fasta"))
-# scafseq=record_dict[scaf].seq
-#
-# startgene=gene2mask_genecoord[gene][0][0]   #phase 1
-# endgene=gene2mask_genecoord[gene][0][1]
-# record_dict_gene = SeqIO.to_dict(SeqIO.parse("/home/mbastian/data/Enard_postbusco/Genes_to_analyse/"+gene+"_filtred.fna", "fasta"))
-# geneseq=record_dict_gene[sp+"_E"].seq
-#
-#
-# if gene2brin[gene]=="-":
-#     exonfromscaf=str(scafseq[start:end+1]) #because ] is exclusive
-#     exonfromgene = str(Seq(str(geneseq[len(geneseq) - endgene - 1:len(geneseq) - startgene])).reverse_complement())
-# else:
-#     exonfromscaf = str(scafseq[start:end + 1])  # because ] is exclusive
-#     exonfromgene = str(geneseq[startgene:endgene + 1])
-#
-# if exonfromgene!=exonfromscaf:
-#     print(gene)
-# else:
-#     print("good")
