@@ -1,5 +1,3 @@
-#fais moyenne couverture par paquet de 100 et ecris un nouveau bam
-
 import argparse
 import gzip
 
