@@ -25,8 +25,8 @@ The traits table is reduced in function of the analyse.
 - ### **/data_144sp_allpolym**
 
 	- **/rootfile**: A file with prior for the traits at the root.
-
-	- **/tableTHV_144mam_masked_6002genes_nogt_lowpsallowed**: The table with the life history traits, pS and pN/pS at the tips.
+   
+    - **/tableTHV_144mam_masked_6002genes_nogt_lowpsallowed**: The table with the life history traits, pS and pN/pS at the tips.
 
 	- **/fastcoevol_output/** , contains correlation coefficient with posterior probability (.cov), reconstruction of ds and dnds for each branch or nodes and along the tree (.tab and .tre)
 	
@@ -34,17 +34,17 @@ The traits table is reduced in function of the analyse.
 
 	- **/rootfile**: A file with prior for the traits at the root.
 
-        - **/thvwithoutgenerationtime**: The table with the life history traits, pS and pN/pS at the tips.
+  - **/thvwithoutgenerationtime**: The table with the life history traits, pS and pN/pS at the tips.
 
-        - **/fastcoevol_output/** , contains correlation coefficient with posterior probability (.cov), reconstruction of ds and dnds for each branch or nodes and along the tree (.tab and .tre)
+  - **/fastcoevol_output/** , contains correlation coefficient with posterior probability (.cov), reconstruction of ds and dnds for each branch or nodes and along the tree (.tab and .tre)
 
 - ###  **/data_89sp_allpolym**
 
 	- **/rootfile**: A file with prior for the traits at the root.
 
-        - **/thvwithoutgenerationtime**: The table with the life history traits, pS and pN/pS at the tips.
+   - **/thvwithoutgenerationtime**: The table with the life history traits, pS and pN/pS at the tips.
 
-        - **/fastcoevol_output/** , contains correlation coefficient with posterior probability (.cov), reconstruction of ds and dnds for each branch or nodes and along the tree (.tab and .tre)
+   - **/fastcoevol_output/** , contains correlation coefficient with posterior probability (.cov), reconstruction of ds and dnds for each branch or nodes and along the tree (.tab and .tre)
 
 - ### **/data-89sp_restrictedpolym**	
 
