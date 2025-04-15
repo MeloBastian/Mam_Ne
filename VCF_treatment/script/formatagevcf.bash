@@ -14,14 +14,8 @@ cut -f1,3,4,5,6,7 ${DIR_PATH}/annotation.gff > ${DIR_PATH}/annotation.gff1 #rm t
 
 echo write bed format
 awk '{print $1, $2, $2+1,$4,$5,$6,$11,$14,$15}' ${OUTPUT_CODING}_tmp | sed 's/\ /\t/g'>${OUTPUT}_coding.bed
-## bedtools intersect vcfmodif --> info gene
-##rm colonne sans interet gff intriduites dans vcf et colone position +1
-##sed ":" info quali
+
 
 echo keep only interest columns
 /beegfs/home/mbastian/bioinfo/bin/bedtools intersect -b ${OUTPUT}_coding.bed -a ${DIR_PATH}/annotation.gff1 -wb | awk '{print $1, $2, $4, $5, $6, $10, $11, $12, $13, $14, $15}'| sed 's/\ /\t/g'  > ${OUTPUT_CODING}
 
-#not necessary
-#echo tabulation
-##tabulate the score
-#python3 /beegfs/home/mbastian/Scripts/Enard_VCF/vcf_score_tabulation.py ${OUTPUT_CODING} ${OUTPUT_CODING_tab}
