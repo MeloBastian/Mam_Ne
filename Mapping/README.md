@@ -1,8 +1,8 @@
 # **/Mapping** (total size = 2.8G)
 
-After all the alignements filtering step, we endup with a set of 6001 genes.
+After all the alignements filtering step, we endup with a set of 6000 genes.
 
-[1] We agregate them in 6x1000 multialignement file (.ali files) and 6x1000 concatened files (.conc files). This files are provided.
+[1] We agregate them in 6x1000 multialignement file (.ali files) and 6x1000 concatened files (.conc files).
 
 [2] One of the 1000 concatened genes file is used to compute a phylogeny using Iqtree2 and a GTR+4 model (iqtree2 -s {multigene.conc}  -m GTR+G4 -nt 8 -alrt 1000 -B 1000 --boot-trees).
 
@@ -14,16 +14,16 @@ After all the alignements filtering step, we endup with a set of 6001 genes.
 
 - ### */script*
  
-There is one script per gene list, they are all similar, only the script for the first list is provided
+For the step 3, there is one script per gene list, they are all similar, only the script for the first list is provided.
 
-        - **/ali_and_conc_afterphylterandbayescode.py** (input: {144_splist},{1000_genelist}; output: {multialignement_name.ali}, {multialignement_name.conc})
+	- **/ali_and_conc_afterphylterandbayescode.py** (input: {144_splist},{1000_genelist}; output: {multialignement_name.ali}, {multialignement_name.conc})
   	Write a multialignement and a concatenat of 1000 genes. (step 1)
 
-        - **/mam_multigeneglobom_liste_1** (input: {tree}, {alignement}; output: {out_name})
-   	Script for multigenemapping, addapted to be launched on a cluster (step 2)
+	- **/mam_multigeneglobom_liste_1** (input: {tree}, {alignement}; output: {out_name})
+   	Script for multigenemapping, addapted to run on a cluster (step 3)
 
 	- **/mamreadmultigeneglobom_liste_1.slurm** (input: {out_mapping_name})
-   	Treatment of the mappings (step 2).
+   	Treatment of the mappings (step 3).
 
 - ### */data*
 
