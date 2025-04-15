@@ -8,14 +8,14 @@ sp2pNpS=dict()
 splist=open("/home/mbastian/data/Enard_postbusco/1genus_144splist_E","r")
 splist=splist.readlines()
 
-#initialise the dico
+#initialise the dict, will contain a list of 500 pS or pN or pN/pS
 for elmt in splist:
     elmt=elmt[:-3]
     sp2pS[elmt]=[]
     sp2pN[elmt] = []
     sp2pNpS[elmt] = []
 
-#complete the dico subset per subset
+#complete the dico, subset per subset
 i=1
 while i <500 :
     subset_table=open("/home/mbastian/data/Enard_postbusco/bootstrap_ps/6002genes/subset_"+str(i)+"_pS_6002genes_masked","r")
@@ -49,7 +49,7 @@ while line !="":
     line=fullpS.readline()
 
 
-#compute quantiles
+#compute quantiles 0.25 and 0.75
 out=open("/home/mbastian/data/Enard_postbusco/bootstrap_ps/6002genes/bootstrap_quantile_psandpnps_6002genes_masked","w")
 out.write("sp\tpS\tq1_pS\tq3_pS\tpN\tq1_pN\tq3_pN\tpNpS\tq1_pNpS\tq3_pN\pS\n")
 for sp in splist:
@@ -68,7 +68,7 @@ for sp in splist:
     else:
         print(sp[:-3])
 
-#compute ecart 5%
+#determine the 5% outlier data
 out=open("/home/mbastian/data/Enard_postbusco/bootstrap_ps/6002genes/bootstrap_q5%_psandpnps_6002genes_masked","w")
 out.write("sp\tpS\tq025_pS\tq975_pS\tpN\tq025_pN\tq975_pN\tpNpS\tq025_pNpS\tq975_pNpS\n")
 for sp in splist:
