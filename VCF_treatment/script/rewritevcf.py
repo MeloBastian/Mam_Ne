@@ -1,4 +1,3 @@
-#file=open("/home/mbastian/home/Scripts/Enard_VCF/samplevcf", "r")
 #file=open("/home/mbastian/data/VCF_Enard/test/Acomys_cahirinus.raw.vcf")
 
 import sys
