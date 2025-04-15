@@ -20,7 +20,7 @@ Efastalist=Efastalist.readlines()
 sortie_full=open(out_table_path_full,"w")
 sortie_full.write("specie\tpS\tpN\tpN/pS\tNSobs\tSobs\tlencallablepos_codon\tnbgenewithSNP\tnbgenetot\n")
 
-lencoding_file=open(path_data+"/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/table_sp2lencallcoding_6002genes","r")
+lencoding_file=open(path_data+"/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/table_sp2lencallcoding_6002genes","r") #out of count_coding_callable_6002genes.py
 lencoding=lencoding_file.readlines()
 sp2lencallable=dict()
 for a in lencoding:
@@ -31,34 +31,27 @@ for a in lencoding:
 
 
 for elmt in Efastalist: #for each sp
-    geneprstinlist=0
-    genefileexist=0
+    geneprstinlist=0 #count the number of snp in the vcf belonging to genes present in the 6002 busco gene list
+    genefileexist=0 #count the number of genes in the vcf file
     seqnotfound = 0
     name = elmt[:-3]
     if os.path.exists(path_data + "VCF_Enard/vcf_annoted/callablesnp/"+name+"/Enard_mam_"+name+"_coding_homofiltred_GQ150QUAL125_fq02to08_6002genes.vcf"):
-        #print()
-        #print(name,"in progress")
         vcffile = open(path_data + "VCF_Enard/vcf_annoted/callablesnp/"+name+"/Enard_mam_"+name+"_coding_homofiltred_GQ150QUAL125_fq02to08_6002genes.vcf","r")
         line = vcffile.readline()
-        gene2NS=dict()
+        gene2NS=dict() #count the nb of non-syno snp per gene
         obsNS=0
         obsS=0
-        gene2S=dict()
-        gene2length=dict() #used only to count non redudant genes
-        genewithsnp=list()
+        gene2S=dict() #count the nb of syno snp per gene
+        gene2length=dict() #initially countain the genes length (before implementation of the masking consideration in the script) but concreatly used to only count the number of busco genes in the vcf
+        genewithsnp=list() # a list of gene with a least one snp
         while line !="":
             info=line.split()
             gene=str(info[4])
             mut=info[7]
             if gene in genelist:
-                #if gene not in sp2genefiltred[name]: #so the gene pass the phylter filtre
-                #path=str(path_data + "Enard_postbusco/Genes/"+gene+"_no_filter/" + gene+".fasta") #didn't use the length of the gene, just want to know is the seq still here after phylter
-                #if os.path.exists(path):
-                #    ali = SeqIO.to_dict(SeqIO.parse(path, "fasta")) #really usefull to open the gene ?
-                #    if name+"_E" in ali :
                 geneprstinlist += 1
-                gene2length[gene]=1#used only to count non redudant genes
-                if gene not in genewithsnp:
+                gene2length[gene]=1# dont care about the value, only to repertory the number of busco genes in the vcf
+                if gene not in genewithsnp: #if the genes not already seen in the vcf
                     genewithsnp.append(gene)
                     genefileexist +=1
                 if mut=="NS":
@@ -83,7 +76,7 @@ for elmt in Efastalist: #for each sp
                     #    if name+"_E" in ali:
                             #nbrcodon = int(len(ali[name+"_E"].seq) / 3)
                             #gene2length[gene]=nbrcodon
-                        nbgene+=1
+                        nbgene+=1 #add to the count, the number of genes without snp
 
             totlen=int(sp2lencallable[name]) /3 #have to be in codon
             for gene, value in gene2NS.items():
