@@ -2,7 +2,7 @@ from Bio import SeqIO
 
 splist_file = open("/home/mbastian/data/Enard_postbusco/1genus_144splist_E", "r")
 splist = splist_file.readlines()
-sp2genefilter_file = open("/home/mbastian/data/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/table_idgenebysp", "r") #remaining genes in each sp, from count_seq.py
+sp2genefilter_file = open("/home/mbastian/data/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/table_idgenebysp", "r") #list of genes per sp, from count_seq.py
 sp2genefilter = sp2genefilter_file.readlines()
 sp2gene=dict()
 for line in sp2genefilter:
@@ -17,7 +17,7 @@ for line in sp2genefilter:
         gene=elmt.replace("'","")
         sp2gene[info[0][:-2]].append(gene)
 
-sp2lencall=dict()
+sp2lencall=dict() #dict with a the number of coding callable position per species, only for the genes in the list.
 
 genelist_file=open("/home/mbastian/data/Enard_postbusco/Genes_after_phylterandbayescode_filtering/fulldataset/145sp/masked/list6002genes","r")
 genelist=genelist_file.readlines()
