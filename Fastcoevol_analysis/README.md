@@ -1,17 +1,17 @@
 
-# **/Fastcoevol_analysis** (total size = 6.5G)
+# **/FastCoevol_analysis** (total size = 6.5G)
 
-[1] Compute a traits table containing life history traits and polymorphism measures per species.
+[1] Compute a table containing life history traits and polymorphism measures per species.
 
-[2] Fastcoevol analysis
-   It require the suffstats files (/Mapping), a table containing traits of interest at tips (LHT, pS, pN/pS), a rootfile and a tree (/Mapping).
-   Fastcoevol is a bayescode tools
-   After a fastcoevol run, the data are readed by a readfastcoevol tool : /bayescode/data/readfastcoevol -x {burning} {everyXpoints} {end} {fastcoevolout}
+[2] FastCoevol analysis
+   This analysis require the suffstats files (/Mapping), a table containing traits of interest at tips (LHT, pS, pN/pS), a rootfile the mean and variance of the prior for the traits at the root) and a tree (/Mapping).
+   FastCoevol is a program implemented in bayescode. The command is provided below.
+   After a FastCoevol run, the data are readed by the readfastcoevol program : /bayescode/data/readfastcoevol -x {burning} {everyXpoints} {end} {fastcoevolout}
 
 [3] Commands to transform the .tre output file in a pdf file representing a tree : /coevol/data/drawtree color -th 0.02 -fs 3 file.tre | latex file.tex | dvipdf file.dvi
 
-Four analysis were performed with and without the polymorphism of six species and with the 144 species or a subset of 89 more distant species (/144to89sp).
-The traits table is reduced in function of the analyse.
+Four analyses were performed with and without the polymorphism data from the six outlier species (see article for more information) and with the 144 species or a subset of 89 more distant species (/144to89sp).
+The traits table is reduced depending on the analysis.
 
 
 - ### **/script**
