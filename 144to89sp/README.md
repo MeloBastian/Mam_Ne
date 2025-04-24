@@ -1,11 +1,11 @@
 # **/144to89species** (total size = 1.7G)
 
-In a part of the analyse, the 144 species tree was reduced to remove close species using the bayescode cuttree program : /bayescode/data/cuttree <chronogram> <cutoff> <out>.
+In this part of the analysis, the 144 species tree was reduced to remove closely related species. This was done using the cuttree program implemented in the bayescode suite : /bayescode/data/cuttree <chronogram> <cutoff> <out>.
 We use 0.1 as a cutoff.
-When 2 or more species are flagged as too close, one of them is choosen based on its coverage and life history traits availability.
+When 2 or more species are flagged as too close, one of them is choosen based on its coverage and on the avaibility of information about life history traits.
 This new specie subset countain 89 species.
-The mapping is then realised as for the 144 species set (see /Mapping).
-As there is less species, the genes subset for the mapping run can be larger so the genes are regrouped in 4 * 1500 genes listes rather than 6 * 1000 genes.
+Stochastic mapping of substitution events is then realised using the same procedure as for the 144 species set (see /Mapping).
+As there is less species, the subset of genes that can be simultaneously processed for the mapping run can be larger, so the genes are clustererd in sets of  4 * 1500 genes rather than 6 * 1000 genes.
 
 "X" correspond to the subset id
 
@@ -19,4 +19,4 @@ As there is less species, the genes subset for the mapping run can be larger so 
 	
 	- **/1500genes_subsetX.conc**: 4 concatenation of 1500 genes.
 		
-	- **/merge_mam_multigeneglobom.genedsomsuffstat**: Suffastat from the 4 x 1500 genes mapping, merged in a unique file for fastcoevol.
+	- **/merge_mam_multigeneglobom.genedsomsuffstat**: Sufficient statistics for the substitution mapping on the 4 sets of 1500 genes, merged in a unique file for fastcoevol.
