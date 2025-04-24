@@ -1,17 +1,17 @@
 # Polymorphism_measure (total size = 7.4M)
 
-[1] We estimate the number of callable coding sites in the 6002 genes. The inputs of the script cames from different other part of the project.
+[1] We estimate the number of callable coding sites in the 6002 genes. The inputs of the script comes from different other part of the project.
 
 [2] Compute pS and pN/pS
 
 [3] Study the variability of the pS and pN/pS measure per species by a bootstrap analysis.
 
-- [3.1] Randomly sampling with repeat 6002 genes in the gene list.
-   	Wrote 500 list and compute a pS and pN/pS for each of them.
+- [3.1] Randomly sample with repleacement 6002 genes from the gene list.
+   	Create 500 replicates and, for each replicate,  compute a pS and pN/pS.
 
-- [3.2] Aggregation of the differents subset results and compute pS and pNpS quantiles in a summary table.
+- [3.2] Aggregation of the results for the different subsets and compute quantiles for pS and pNpS, which are then written in a summary table.
 
-- [3.3] log(pS)~log(pN/pS) graphe with bootstrap bars and n50 coloration
+- [3.3] log(pS)~log(pN/pS) graph with bootstrap bars (colors represent the N50 of the genome assemblies).
 
 
 	
