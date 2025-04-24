@@ -1,11 +1,12 @@
 # /PostBusco_treatment (total size = 3.6G)
 
-[1] The Busco raw output are inputed in a homemade python script (Postraitement_busco_V4.py) to perform, quality control, summarize and agregate the data of interest (the orthologous unicopy complete fasta). It's provide 9211 fasta output.
-This step also provide the position of each exons in each anotated genes in a metaeuk format. The metaeuk format is then converted in a gff format using the metaeuktogff.py script and manually sorted by genome position. 
+[1] The Busco raw output are given as an input to a homemade python script (Postraitement_busco_V4.py) to perform quality control, summarize and agregate the data of interest (the orthologous unicopy complete fasta).
+This return 9211 fasta files as its final output.
+This step also provides the position of each exons in each anotated genes in a metaeuk format. The metaeuk format is then converted in a gff format using the metaeuktogff.py script and manually sorted by genome position. 
 
-[2] We manually reduce the genes dataset to remove genes not present in majority of species and species with a too low Busco score (identified by the gene2sp_filtering.R script). Leads to a list of 8060 genes and 183 species.
+[2] We manually remove genes not present in majority of the species, and species with a Busco score deemed too low (identified by the gene2sp_filtering.R script). This results in a list of 8060 genes and 183 species.
 
-[3] We Reduce the 183 species list to keep only one specie per genus (use coverage and availability of their life history traits as a criterion). End up with a list of 144 species. We filter the genes to keep only the sequences from those species.
+[3] We reduce the list of 183 species to keep only one specie per genus (using coverage and availability of their life history traits as a criteria for selection). We end up with a list of 144 species. We filter the genes to keep only the sequences from those species.
 
 "X" refers to the gene id
 
