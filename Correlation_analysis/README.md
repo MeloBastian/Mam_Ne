@@ -9,7 +9,7 @@
 
 [4] Plot the correlation matrice graphe using a modified version of the ggcorrplot R function.
 
-[5] The different correlation matrix figure are manually merged in a unique figure.
+[5] The figures for the different correlation matrices are manually merged in a unique figure.
 
 - ### **/script**
 
