@@ -9,7 +9,7 @@ At the end, there is 6001 genes left.
 
 Different alignment filtering steps:
 
-   	[3.1] Alignements filtering with HmmCleaner (version 0.180750) but imply first to convert the sequences in amino acide, running Hmmcleaner and then coming back to nucleic sequence using Macse:
+   	[3.1] Alignements filtering with HmmCleaner (version 0.180750); this implies that sequences should first be converted into amino acide, running Hmmcleaner and then coming back to DNA sequence using Macse:
     		- seaview -convert -translate -o {ali_aa.fna} {input_nuc.fna}
         	- Hmmcleaner {ali_aa.fna}
         	- macse_v2.06.jar -prog reportMaskAA2NT -align_AA {ali_aa.fna} -align {input_nuc.fna} -mask_AA -
@@ -23,7 +23,7 @@ Different alignment filtering steps:
    	[3.5] Alignement analysis using Bayescode Version: 0d767fc (https://github.com/bayesiancook/bayescode.git).
  	      To do so :
                 -  The data are mapped using the multigeneglobom tools (as described in the /Mapping section). 
-                -  The mapping is an input for the tools genebranchdnds (-d {mappingsuffstats}, -t {tree})  which provide a dN/dS measure for each branch and gene in a tab.
+                -  The mapping is an input for the genebranchdnds program (-d {mappingsuffstats}, -t {tree})  which provides in output a simple empirical estimate of dN/dS for each branch and gene in a tab.
                 -  This table is analysed to detect outliers branch dN/dS in each genes.
 
    	[3.6] Filtering every sequences or genes flagged by Phylter or Bayescode.
