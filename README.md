@@ -1,6 +1,6 @@
 # Mam_Ne
 
-This directory contain the data and scripts for the analyses presented in the manuscript _Empirical validation of the nearly neutral theory at divergence and population genomic scale using 150 mammals genomes_ (Bastian, Enard, Lartillot, https://doi.org/10.1101/2025.04.17.649326). 
+This directory contain the data and scripts for the analyses presented in the manuscript _Empirical validation of the nearly neutral theory at divergence and population genomic scale across 150 placental mammal genomes_ (Bastian, Enard, Lartillot, https://doi.org/10.1101/2025.04.17.649326). 
 
 **Main goal and analysis**
 
