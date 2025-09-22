@@ -2,7 +2,7 @@
 
 This directory contain the data and scripts for the analyses presented in the manuscript _Empirical validation of the nearly neutral theory at divergence and population genomic scale across 150 placental mammal genomes_ (Bastian, Enard, Lartillot, https://doi.org/10.1101/2025.04.17.649326). 
 
-**Main goal and analysis**
+**Main goal and analysis :**
 
 The aim of this study is to compare estimators of effective population size with measures of selection efficacy at phylogenetic scale (using life history traits and the ratio of non-synonymous over synonymous substitution rates, dN/dS) and at population scale (using synonymous heterozygosity pS and the ratio of non-synonymous over synonymous heterozygosity pN/pS).
 To do this, we annotated around 150 mammalian genomes and identified approximately 8000 single-copy orthologous genes (6000 after quality filtering).\
@@ -13,10 +13,10 @@ The coverage files were used to determine the callable fraction of the data.\
 Different filtering steps were performed on the alignments and vcf files.
 Alignments, pS,  pN/pS, phylogeny and life history traits were combined and given as input to the Fastcoevol software (github.com/bayesiancook/bayescode.git), which returned an estimate of the correlation matrix between traits and a reconstruction of the evolution of each trait along the phylogeny.
 
-**Notes for the users**
+**Notes for the users :**
 
 The different directories corresponds to the differents steps of the analysis. Their is a readme with more detailed informations in each of them.\
-In this git repository, only the scripts are provided (and some light data files). The data mentionned in the different readme will be available soon or by request.
+In this git repository, only the scripts are provided (and some light data files). The data mentionned in the different readme are available at: https://doi.org/10.5281/zenodo.15283024.
 
 The path mentioned in the scripts correspond to the path used localy for the analysis. These should be edited so as to match them with your own directory.
 The <input> and <output> information are not always the exact arguments that should be given to the scripts. Instead, they are juste indications for the users to get a better understanding of how the scripts work.
